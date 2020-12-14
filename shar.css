@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+@font-face {
+    font-family: 'CarlsbergSans';
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/CarlsbergSans-Light.woff2") format("woff2"), url("/resources/fonts/CarlsbergSans-Light.woff") format("woff"), url("/resources/fonts/CarlsbergSans-Light.ttf") format("truetype"), url("/resources/fonts/CarlsbergSans-Light.eot") format("eot");
+}
+
+@font-face {
+    font-family: 'CarlsbergSans';
+    font-style: italic;
+    font-weight: normal;
+    src: url("fonts/CarlsbergSans-LightItalic.woff2") format("woff2"), url("/resources/fonts/CarlsbergSans-LightItalic.woff") format("woff"), url("/resources/fonts/CarlsbergSans-LightItalic.ttf") format("truetype"), url("/resources/fonts/CarlsbergSans-LightItalic.eot") format("eot");
+}
+
+@font-face {
+    font-family: 'CarlsbergSans';
+    font-style: normal;
+    font-weight: bold;
+    src: url("fonts/CarlsbergSans-Bold.woff2") format("woff2"), url("/resources/fonts/CarlsbergSans-Bold.woff") format("woff"), url("/resources/fonts/CarlsbergSans-Bold.ttf") format("truetype"), url("/resources/fonts/CarlsbergSans-Bold.eot") format("eot");
+}
+
+@font-face {
+    font-family: 'CarlsbergSans';
+    font-style: italic;
+    font-weight: bold;
+    src: url("fonts/CarlsbergSans-BoldItalic.woff2") format("woff2"), url("/resources/fonts/CarlsbergSans-BoldItalic.woff") format("woff"), url("/resources/fonts/CarlsbergSans-BoldItalic.ttf") format("truetype"), url("/resources/fonts/CarlsbergSans-BoldItalic.eot") format("eot");
+}
+
+body {
+    font-family: 'CarlsbergSans';
+    margin: 0;
+    position: relative;
+}
+
+
+
+
+
+/* ----------------------------------- */
+
+.center-my {
+    margin: 0 auto;
+    max-width: 940px;
+}
+.super-shar {
+    position: relative;
+}
+.super-shar img {
+    width: 100%;
+}
+.super-shar__btn {
+  border:0;
+  outline:none;
+    width: 281px;
+    height: 64px;
+    margin: 0;
+    position: absolute;
+    border-radius: 32px;
+    background-color: #00dbff;
+    cursor: pointer;
+    transition: background-color 0.4s,transform 0.2s ;
+    font-size: 24px;
+    font-weight: bold;
+    left:50%;
+    transform: translateX(-50%) translateY(-100px);
+}
+.super-shar__btn:active {
+     
+}
+ .super-shar__btn:hover {
+    background-color: #0db4d0;
+}
+.super-shar__bottom {
+
+    width: 100%;
+    min-height:100px;
+    background-color: rgba(255,255,255, 0.5);
+    padding: 5px 20px 0px 20px;
+    color:#000; 
+    font-size: 17px;
+    
+     position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px; 
+    z-index: 3;
+    transition: background-color 0.3s, bottom 0.3s;
+     background-color: transparent;
+    
+}
+.super-shar__bottom.acitve {
+    background-color: rgba(255,255,255,0.9);
+}
+
+.super-shar__row {
+    transition: opacity 0.3s;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.super-shar__row.acitve {
+    opacity: 1;
+}
+.super-shar__logo {
+     margin-right: 30px;
+}
+.super-shar__logo  img {
+    max-width: 127px;
+}
+.super-shar__texts {
+  flex:1;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.16;
+  color: #00314c;
+}
+.shar_text {
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    width: 140px;
+    height: 36px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    left:50%;
+    top:50%;
+    transition: all 0.3s;
+    transform: translate(-46%, -28%);
+    z-index: 5;
+}
+.shar_text span {
+    transition: all 0.3s;
+    transform: scale(0); 
+    opacity: 0;
+}
+.shar_text span.acitve{
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+@keyframes snowflakes-fall{
+     0%{transform: translateY( -60%) translateZ(0); }
+    100%{transform: translateY( 90%) translateZ(0); } 
+}
+
+
+@keyframes snowflakes-shake{
+    0%,100%{transform:translateX(0) translateZ(0)}
+    50%{transform:translateX(80px) translateZ(0)}
+}
+.snowflake_Y {
+    display: block;
+    z-index:99;
+    animation-name:snowflakes-fall;
+    animation-duration:9s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    animation-play-state:running;
+    will-change: transform;
+}
+.snowflake{position:fixed;top:-10%;
+display: block;
+font-size: 1em;
+    z-index:99;
+    user-select:none;cursor:default;
+    
+    animation-name:snowflakes-shake;
+    animation-duration:3s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+    animation-play-state:running;
+    will-change: transform;
+}
+.snowflake.s0{animation-delay:0s}
+.snowflake.s1{animation-delay:1s}
+.snowflake.s2{animation-delay:2s}
+.snowflake.s3{animation-delay:3s}
+.snowflake.s4{animation-delay:4s}
+.snowflake.s5{animation-delay:5s}
+.snowflake.s6{animation-delay:6s}
+ 
+
+body .super-shar img.picture_tag_shar {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%,-44%) ;
+    width: 509px;
+    height: 509px;
+    z-index: 4;
+    transition: trasform 0.3s;
+}
+body .super-shar img.picture_tag_shar.acitve {
+    transform: translate(-50%,-44%) ;
+}
+
+
+@media only screen and (max-width: 920px) {
+    body .super-shar img.picture_tag_shar {
+        width: 409px;
+        height: 409px;
+    }
+}
+@media only screen and (max-width: 840px) {
+
+    .super-shar__bottom.acitve {
+        background-color: #fff;
+    }
+    .super-shar__bottom {
+        bottom: -4vw;
+    }
+    .shar_text {
+            transform: translate(-48%, -47%);
+    }
+   
+}
+ 
+@media only screen and (max-width: 680px) {
+    .super-shar__bottom {
+        bottom: -42vw; 
+        margin-right: 10px;
+    }
+ 
+}
+@media only screen and (max-width: 560px) {
+
+}
+@media only screen and (max-width: 510px) {
+  .super-shar__bottom {
+        bottom: -45vw; 
+    }
+    .shar_text {
+            transform: translate(-46%, -15%);
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    body .super-shar img.picture_tag_shar
+    {
+        width: 80vw;
+        height: auto;
+    }
+ 
+    .super-shar__btn {
+        width: 239px;
+        height: 52px;
+        font-size: 20px;
+    }
+    .super-shar__bottom {
+        bottom: -60vw; 
+    }
+    .super-shar__row {
+        display: block;
+    }
+    .super-shar__logo {
+        margin-right: 0;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 340px) {
+   .super-shar__bottom {
+        bottom: -70vw; 
+    }
+    .shar_text {
+        transform: translate(-48%, -34%);
+     }
+    .super-shar__btn {
+        transform: translateX(-50%) translateY(-75px);
+    }
+
+}
+
